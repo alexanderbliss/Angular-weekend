@@ -5,8 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="vendors/angular.min.js"></script>
+    <script src="client.js"></script>
+    <script src="style.css"></script>
 </head>
+
 <body ng-app = "instaApp">
-    {{4+4}}
+    <h1>Deffinetly not InstaGram</h1>
+    <div ng-controller="instaController as insta">
+    {{4+5}}
+
+<ul>
+    <li ng-repeat="data in insta.pics">
+        
+        <img ng-src="{{data.photo}}">
+        <button ng-click="count = count +1" ng-init+ "count=0"> like: {{count}} 
+        
+    </li>
+
+</ul>
+</div>
 </body>
 </html>
