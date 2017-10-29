@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,23 +8,39 @@
     <title>Document</title>
     <script src="vendors/angular.min.js"></script>
     <script src="client.js"></script>
-    <script src="style.css"></script>
+    <link rel="stylesheet" href="vendors/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="vendors/bootstrap-3.3.7-dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="vendors/bootstrap-3.3.7-dist/js/bootstrap.js">
+    <link rel="stylesheet" href="style.css">
 </head>
-
-<body ng-app = "instaApp">
-    <h1>Deffinetly not InstaGram</h1>
-    <div ng-controller="instaController as insta">
-    {{4+5}}
-
-<ul>
-    <li ng-repeat="data in insta.pics">
-        
-        <img ng-src="{{data.photo}}">
-        <button ng-click="count = count +1" ng-init+ "count=0"> like: {{count}} 
-        
-    </li>
-
-</ul>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-5">
+        </div>
+        <div class="col-md-7">
+            <h1>Definitely not InstaGram</h1>
+        </div>
+    </div>
 </div>
+<!-- {{4+5}} test to see if angular is working -->
+
+<body ng-app="instaApp">
+    <div ng-controller="instaController as insta">
+        <ul>
+            <li ng-repeat="data in insta.pics">
+                <div class="col-md-6">
+                    <div class="col-md-12">Description: {{insta.message}}</div>
+                    <img ng-click="insta.showDes(data)" ng-init+ "veiw=0" ng-src="{{data.photo}}">
+                    <div class="col-md-4">
+                        veiws: {{insta.veiw}}
+                        <button ng-click="count = count +1" ng-init+ "count=0">Like</button>
+                        <span>likes: {{count}}</span>
+                        </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    </div>
 </body>
+
 </html>
